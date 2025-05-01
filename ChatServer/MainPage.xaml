@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+     Author:    Catherine Bao
+     Partner:   Jessie Taubert
+     Date:      01-April-2024
+     Course:    CS 3500, University of Utah, School of Computing
+     Copyright: CS 3500 and Catherine Bao - This work may not 
+                  be copied for use in Academic Coursework.
+
+     I, Catherine Bao and Jessie Taubert, certify that I wrote this code from scratch and
+     did not copy it in part or whole from another source.  All 
+     references used in the completion of the assignments are cited
+     in my README file.
+    
+     File Contents
+        This file declares components and interface for the Chat Server
+ -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChatServer.MainPage"
+             BackgroundColor="#3D2C2E">
+
+    <Grid RowDefinitions="Auto"
+      ColumnDefinitions="2*, 5*, 2*">
+        <Grid Grid.Column="0" Padding="10">
+            <StackLayout>
+                <Label x:Name="serverName" Text="Server Name" FontAttributes="Bold" TextColor="#EAD7D1"></Label>
+                <Entry x:Name="serverEntry" TextColor="#EAD7D1" BackgroundColor="#454344"></Entry>
+                <Label x:Name="serverIP" Text="Server IP Address" Margin="0, 10, 0, 0" FontAttributes="Bold" TextColor="#EAD7D1"></Label>
+                <Entry x:Name="serverIPEntry" IsReadOnly="True" TextColor="#EAD7D1" BackgroundColor="#454344"></Entry>
+            </StackLayout>
+        </Grid>
+        <Grid Grid.Column="1" Padding="10">
+            <StackLayout>
+                <Label FontAttributes="Bold" TextColor="#EAD7D1">Chat:</Label>
+                <Border Stroke="#E79467" StrokeThickness="4">
+                    <Editor x:Name="chatDisplay" HeightRequest="300" IsReadOnly="True" TextColor="#EAD7D1"></Editor>
+                </Border>
+            </StackLayout>
+        </Grid>
+        <Grid Grid.Column="2" Padding="10">
+            <StackLayout>
+                <Label FontAttributes="Bold" TextColor="#EAD7D1">Participants:</Label>
+                <Border Stroke="#51704D" StrokeThickness="4">
+                    <Editor x:Name="userDisplay" HeightRequest="300" IsReadOnly="True" TextColor="#EAD7D1"></Editor>
+                </Border>
+                <Button x:Name="serverState" Text="Start Server" Margin="0, 10, 0, 0" VerticalOptions="End" Clicked="startServer" BackgroundColor="#415D43" TextColor="#EAD7D1" FontAttributes="Bold"></Button>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
